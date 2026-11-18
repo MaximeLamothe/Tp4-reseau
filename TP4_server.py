@@ -1,7 +1,7 @@
 """\
 GLO-2000 Travail pratique 4 - Serveur 2026
 Noms et numéros étudiants:
--
+-Maxime Lamothe 537 068 779
 -
 """
 
@@ -33,8 +33,22 @@ class Server:
         S'assure que les dossiers de données du serveur existent.
         """
         # self._server_socket
+        self._server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            self._server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            self._server_socket.bind(("0.0.0.0", gloutils.APP_PORT))
+            self._server_socket.listen()
+
+        except OSError:
+            self._server_socket.close()
+            sys.exit(1)
+
+        os.makedirs(os.path.join(gloutils.SERVER_DATA_DIR, gloutils.SERVER_LOST_DIR), exist_ok=True)
+
         # self._client_socs
+        self._client_socs: List[socket.socket] = []
         # self._logged_users
+        self._logged_users: Dict[socket.socket, str] = {}
         # ...
 
     def cleanup(self) -> None:
@@ -45,9 +59,15 @@ class Server:
 
     def _accept_client(self) -> None:
         """Accepte un nouveau client."""
+        client_soc = self._server_socket.accept()
+        self._client_socs.append(client_soc)
 
     def _remove_client(self, client_soc: socket.socket) -> None:
         """Retire le client des structures de données et ferme sa connexion."""
+        self._logged_users.pop(client_soc, None)
+        if client_soc in self._client_socs:
+            self._client_socs.remove(client_soc)
+        client_soc.close()
 
     def _create_account(
         self, client_soc: socket.socket, payload: gloutils.AuthPayload
@@ -119,6 +139,7 @@ class Server:
         waiters = []
         while True:
             # Select readable sockets
+            waiters, _, _ = select.select([self._server_socket]+self._client_socs, [], [])
             for waiter in waiters:
                 # Handle sockets
                 pass

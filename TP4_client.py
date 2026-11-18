@@ -1,7 +1,7 @@
 """\
 GLO-2000 Travail pratique 4 - Client 2026
 Noms et numéros étudiants:
--
+-Maxime Lamothe 537 068 779
 -
 """
 
@@ -25,6 +25,14 @@ class Client:
         Prépare un attribut `_username` pour stocker le nom d'utilisateur
         courant. Laissé vide quand l'utilisateur n'est pas connecté.
         """
+        self._username = getpass.getuser()
+        self._socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        try:
+            self._socket.connect((destination, gloutils.APP_PORT))
+        except OSError:
+            print("Connection impossible")
+            self._socket.close()
+            sys.exit(1)
 
     def _register(self) -> None:
         """
@@ -49,6 +57,9 @@ class Client:
         Préviens le serveur de la déconnexion avec l'entête `BYE` et ferme le
         socket du client.
         """
+        message = gloutils.GloMessage(header=gloutils.Headers.BYE)
+        glosocket.send_mesg(self._socket, json.dumps(message))
+        self._socket.close()
 
     def _read_email(self) -> None:
         """
