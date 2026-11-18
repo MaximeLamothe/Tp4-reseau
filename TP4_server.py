@@ -1,13 +1,15 @@
 """\
-GLO-2000 Travail pratique 4 - Client 2026
+GLO-2000 Travail pratique 4 - Serveur 2026
 Noms et numéros étudiants:
 -
 -
 """
 
-import argparse
-import getpass
+import hashlib
+import hmac
 import json
+import os
+import select
 import socket
 import sys
 
@@ -15,91 +17,110 @@ import glosocket
 import gloutils
 
 
-class Client:
-    """Client pour le serveur mail @glo2000.ca 2026."""
+class Server:
+    """Serveur mail @glo2000.ca 2026."""
 
-    def __init__(self, destination: str) -> None:
+    def __init__(self) -> None:
         """
-        Prépare et connecte le socket du client `_socket`.
+        Prépare le socket du serveur `_server_socket`
+        et le met en mode écoute.
 
-        Prépare un attribut `_username` pour stocker le nom d'utilisateur
-        courant. Laissé vide quand l'utilisateur n'est pas connecté.
+        Prépare les attributs suivants:
+        - `_client_socs` une liste des sockets clients.
+        - `_logged_users` un dictionnaire associant chaque
+            socket client à un nom d'utilisateur.
+
+        S'assure que les dossiers de données du serveur existent.
         """
+        # self._server_socket
+        # self._client_socs
+        # self._logged_users
+        # ...
 
-    def _register(self) -> None:
+    def cleanup(self) -> None:
+        """Ferme toutes les connexions résiduelles."""
+        for client_soc in self._client_socs:
+            client_soc.close()
+        self._server_socket.close()
+
+    def _accept_client(self) -> None:
+        """Accepte un nouveau client."""
+
+    def _remove_client(self, client_soc: socket.socket) -> None:
+        """Retire le client des structures de données et ferme sa connexion."""
+
+    def _create_account(
+        self, client_soc: socket.socket, payload: gloutils.AuthPayload
+    ) -> gloutils.GloMessage:
         """
-        Demande un nom d'utilisateur et un mot de passe et les transmet au
-        serveur avec l'entête `AUTH_REGISTER`.
+        Crée un compte à partir des données du payload.
 
-        Si la création du compte s'est effectuée avec succès, l'attribut
-        `_username` est mis à jour, sinon l'erreur est affichée.
+        Si les identifiants sont valides, créee le dossier de l'utilisateur,
+        associe le socket au nouvel l'utilisateur et retourne un succès,
+        sinon retourne un message d'erreur.
         """
+        return gloutils.GloMessage()
 
-    def _login(self) -> None:
+    def _login(
+        self, client_soc: socket.socket, payload: gloutils.AuthPayload
+    ) -> gloutils.GloMessage:
         """
-        Demande un nom d'utilisateur et un mot de passe et les transmet au
-        serveur avec l'entête `AUTH_LOGIN`.
+        Vérifie que les données fournies correspondent à un compte existant.
 
-        Si la connexion est effectuée avec succès, l'attribut `_username`
-        est mis à jour, sinon l'erreur est affichée.
+        Si les identifiants sont valides, associe le socket à l'utilisateur et
+        retourne un succès, sinon retourne un message d'erreur.
         """
+        return gloutils.GloMessage()
 
-    def _quit(self) -> None:
+    def _logout(self, client_soc: socket.socket) -> None:
+        """Déconnecte un utilisateur."""
+
+    def _get_email_list(self, client_soc: socket.socket) -> gloutils.GloMessage:
         """
-        Préviens le serveur de la déconnexion avec l'entête `BYE` et ferme le
-        socket du client.
+        Récupère la liste des courriels de l'utilisateur associé au socket.
+        Les éléments de la liste sont construits à l'aide du gabarit
+        SUBJECT_DISPLAY et sont ordonnés du plus récent au plus ancien.
+
+        Une absence de courriel n'est pas une erreur, mais une liste vide.
         """
+        return gloutils.GloMessage()
 
-    def _read_email(self) -> None:
+    def _get_email(
+        self, client_soc: socket.socket, payload: gloutils.EmailChoicePayload
+    ) -> gloutils.GloMessage:
         """
-        Demande au serveur la liste de ses courriels avec l'entête
-        `INBOX_READING_REQUEST`.
-
-        Affiche la liste des courriels puis transmet le choix de l'utilisateur
-        avec l'entête `INBOX_READING_CHOICE`.
-
-        Affiche le courriel à l'aide du gabarit `EMAIL_DISPLAY`.
-
-        S'il n'y a pas de courriel à lire, l'utilisateur est averti avant de
-        retourner au menu principal.
+        Récupère le contenu de l'email dans le dossier de l'utilisateur associé
+        au socket.
         """
+        return gloutils.GloMessage()
 
-    def _send_email(self) -> None:
+    def _get_stats(self, client_soc: socket.socket) -> gloutils.GloMessage:
         """
-        Demande à l'utilisateur respectivement:
-        - l'adresse email du destinataire,
-        - le sujet du message,
-        - le corps du message.
-
-        La saisie du corps se termine par un point seul sur une ligne.
-
-        Transmet ces informations avec l'entête `EMAIL_SENDING`.
+        Récupère le nombre de courriels et la taille du dossier et des fichiers
+        de l'utilisateur associé au socket.
         """
+        return gloutils.GloMessage()
 
-    def _check_stats(self) -> None:
+    def _send_email(self, payload: gloutils.EmailContentPayload) -> gloutils.GloMessage:
         """
-        Demande les statistiques au serveur avec l'entête `STATS_REQUEST`.
+        Détermine si l'envoi est interne ou externe et:
+        - Si l'envoi est interne, écris le message tel quel dans le dossier
+        du destinataire.
+        - Si le destinataire n'existe pas, place le message dans le dossier
+        SERVER_LOST_DIR et considère l'envoi comme un échec.
+        - Si le destinataire est externe, considère l'envoi comme un échec.
 
-        Affiche les statistiques à l'aide du gabarit `STATS_DISPLAY`.
+        Retourne un messange indiquant le succès ou l'échec de l'opération.
         """
+        return gloutils.GloMessage()
 
-    def _logout(self) -> None:
-        """
-        Préviens le serveur avec l'entête `AUTH_LOGOUT`.
-
-        Met à jour l'attribut `_username`.
-        """
-
-    def run(self) -> None:
-        """Point d'entrée du client."""
-        should_quit = False
-
-        while not should_quit:
-            if not self._username:
-                # Authentication menu
-                pass
-            else:
-                # Main menu
+    def run(self):
+        """Point d'entrée du serveur."""
+        waiters = []
+        while True:
+            # Select readable sockets
+            for waiter in waiters:
+                # Handle sockets
                 pass
 
 
@@ -110,18 +131,11 @@ class Client:
 
 
 def _main() -> int:
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "-d",
-        "--destination",
-        action="store",
-        dest="dest",
-        required=True,
-        help="Adresse IP/URL du serveur.",
-    )
-    args = parser.parse_args(sys.argv[1:])
-    client = Client(args.dest)
-    client.run()
+    server = Server()
+    try:
+        server.run()
+    except KeyboardInterrupt:
+        server.cleanup()
     return 0
 
 
