@@ -13,63 +13,67 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.168171668077949" />
-      <entry key="MS500" value="2.1152719980158583" />
-      <entry key="S2" value="2.71927089362768" />
-      <entry key="S5" value="2.88183810908636" />
-      <entry key="S10" value="2.9465984203544213" />
-      <entry key="S30" value="3.1688037841997394" />
-      <entry key="S60" value="3.494399648222727" />
-      <entry key="M2" value="5.1699959360835495" />
-      <entry key="M5" value="16.184614455785017" />
-      <entry key="M10" value="34.83448526912793" />
-      <entry key="M15" value="48.86071836211964" />
-      <entry key="M30" value="73.13751844120554" />
-      <entry key="H1" value="92.42139058258036" />
-      <entry key="H2" value="104.92502378604615" />
-      <entry key="H4" value="112.10231707833964" />
-      <entry key="D1" value="118.62995860464916" />
-      <entry key="W1" value="119.80291118703357" />
+      <entry key="MS100" value="1.32315243635351" />
+      <entry key="MS500" value="2.7945937167850214" />
+      <entry key="S2" value="4.039260318300176" />
+      <entry key="S5" value="5.34609452680334" />
+      <entry key="S10" value="6.57786540297011" />
+      <entry key="S30" value="7.998894848458372" />
+      <entry key="S60" value="8.469913662128857" />
+      <entry key="M2" value="8.727548629274533" />
+      <entry key="M5" value="9.331268332546687" />
+      <entry key="M10" value="14.521274098415343" />
+      <entry key="M15" value="22.424444597707417" />
+      <entry key="M30" value="43.09683251396863" />
+      <entry key="H1" value="78.11921464289698" />
+      <entry key="H2" value="145.9469710579099" />
+      <entry key="H4" value="230.5904063369753" />
+      <entry key="D1" value="363.48734619932696" />
+      <entry key="W1" value="395.35934039641603" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="5.563013454116354E-280" />
-      <entry key="S2" value="1.5536755328293737E-70" />
-      <entry key="S5" value="1.412844729248707E-28" />
-      <entry key="S10" value="1.7684177808966836E-14" />
-      <entry key="S30" value="6.512690424570731E-5" />
-      <entry key="S60" value="0.01838868355236884" />
-      <entry key="M2" value="0.33371879235814633" />
-      <entry key="M5" value="2.2760007225309304" />
-      <entry key="M10" value="4.983650033566331" />
-      <entry key="M15" value="6.701729823709067" />
-      <entry key="M30" value="9.217450073527973" />
-      <entry key="H1" value="10.910763168984683" />
-      <entry key="H2" value="11.899749228579191" />
-      <entry key="H4" value="12.435108413021238" />
-      <entry key="D1" value="12.903723045154813" />
-      <entry key="W1" value="12.9861929826681" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="4.966688106399678E-268" />
+      <entry key="S5" value="1.716169351623551E-107" />
+      <entry key="S10" value="6.700511173669966E-54" />
+      <entry key="S30" value="3.863771875274665E-18" />
+      <entry key="S60" value="3.4890195468568724E-9" />
+      <entry key="M2" value="1.1999065656208319E-4" />
+      <entry key="M5" value="0.08156259229734569" />
+      <entry key="M10" value="0.8071385617400683" />
+      <entry key="M15" value="1.774865915422155" />
+      <entry key="M30" value="4.011433988233206" />
+      <entry key="H1" value="6.842689824160844" />
+      <entry key="H2" value="11.249507843842578" />
+      <entry key="H4" value="16.496643996273715" />
+      <entry key="D1" value="24.685517565843448" />
+      <entry key="W1" value="26.651827904235578" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.1418247858032324" />
-      <entry key="MS500" value="2.0914215934532736" />
-      <entry key="S2" value="2.709199113527532" />
-      <entry key="S5" value="2.877336354112973" />
-      <entry key="S10" value="2.9442534564682" />
-      <entry key="S30" value="3.167988192026384" />
-      <entry key="S60" value="3.511712574449247" />
-      <entry key="M2" value="5.497424250881402" />
-      <entry key="M5" value="18.440270947339148" />
-      <entry key="M10" value="39.79205986951606" />
-      <entry key="M15" value="55.53732119726302" />
-      <entry key="M30" value="82.3361788889654" />
-      <entry key="H1" value="103.3205030772737" />
-      <entry key="H2" value="116.81826194900364" />
-      <entry key="H4" value="124.5339804209654" />
-      <entry key="D1" value="131.53307945227803" />
-      <entry key="W1" value="132.78901743205145" />
+      <entry key="MS100" value="1.295922352966222" />
+      <entry key="MS500" value="2.782995463059927" />
+      <entry key="S2" value="4.035069554412797" />
+      <entry key="S5" value="5.343900307108932" />
+      <entry key="S10" value="6.576529252781989" />
+      <entry key="S30" value="7.998358197011031" />
+      <entry key="S60" value="8.469630257176023" />
+      <entry key="M2" value="8.727520394211375" />
+      <entry key="M5" value="9.412001633674281" />
+      <entry key="M10" value="15.324037272552538" />
+      <entry key="M15" value="24.192569471899223" />
+      <entry key="M30" value="47.10014447949093" />
+      <entry key="H1" value="84.95429507182725" />
+      <entry key="H2" value="157.18951411469658" />
+      <entry key="H4" value="247.0816276084748" />
+      <entry key="D1" value="388.1714530627299" />
+      <entry key="W1" value="422.010949393319" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -81,28 +85,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.TP4_client.executor": "Run",
-    "Python.TP4_server.executor": "Run",
-    "Python.glosocket.executor": "Run",
-    "Python.gloutils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/User/Desktop/Tp4-reseau",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "python.packages.toolwindow.project.migrated.to.right.top.v2": "true",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.interpreter.PyAllInterpretersConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.TP4_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TP4_server.executor&quot;: &quot;Run&quot;,
+    &quot;Python.glosocket.executor&quot;: &quot;Run&quot;,
+    &quot;Python.gloutils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Desktop/Tp4-reseau&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;python.packages.toolwindow.project.migrated.to.right.top.v2&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.interpreter.PyAllInterpretersConfigurable&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Python.TP4_client">
     <configuration name="TP4_client" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="Tp4-reseau" />
       <option name="ENV_FILES" value="" />
@@ -153,71 +158,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="Tp4-reseau" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="RUN_AS_SCRIPT" value="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Autodetect">
-      <module name="Tp4-reseau" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="RUN_AS_SCRIPT" value="" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="tests" factoryName="Doctests">
-      <module name="Tp4-reseau" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="RUN_AS_SCRIPT" value="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_SCRIPT" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -234,7 +174,9 @@
       <option name="presentableId" value="Default" />
       <updated>1794959118546</updated>
       <workItem from="1794959119604" duration="1333000" />
-      <workItem from="1794960507732" duration="3602000" />
+      <workItem from="1794960507732" duration="6606000" />
+      <workItem from="1795136002903" duration="1818000" />
+      <workItem from="1795397899780" duration="9684000" />
     </task>
     <servers />
   </component>
